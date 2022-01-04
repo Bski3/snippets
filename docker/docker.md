@@ -87,7 +87,7 @@ Docker auditing with docker-bench-security
 
 clone repo
 ```
-git clone [https://github.com/docker/docker-bench-security.git](https://github.com/docker/docker-bench-security.git)
+git clone https://github.com/docker/docker-bench-security.git
 ```
 run
 ```
