@@ -51,7 +51,6 @@ RUN chsh -s /usr/sbin/nologin root
 ===========================================================================
 
 Specify kernel level capabilities
-[https://man7.org/linux/man-pages/man7/capabilities.7.html](https://man7.org/linux/man-pages/man7/capabilities.7.html)
 ```
 #run with specified capabilities (drop all, add network-related operations with NET_ADMIN)
 docker run --cap-drop all --cap-add NET_ADMIN -it --rm <user> <imageid> /bin/bash
@@ -95,8 +94,12 @@ run
 cd docker-bench-security && ./docker-bench-security.sh
 ```
 
+## Sources
+
+[HackerSploit](https://github.com/AlexisAhmed)
+
 [https://hackersploit.org/docker-security-course/](https://hackersploit.org/docker-security-course/)
 
-[Docker Security Essentials | How To Secure Docker Containers](https://www.youtube.com/watch?v=KINjI1tlo2w)
-
 [Docker benchmark security](https://github.com/docker/docker-bench-security.git)
+
+[Linux manual](https://man7.org/linux/man-pages/man7/capabilities.7.html)
