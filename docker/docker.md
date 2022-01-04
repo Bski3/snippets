@@ -1,9 +1,12 @@
-Description
+## Description
 
 This is a collection of commands for configuring and hardening a Docker instance.
 
-list docker images
+
+General commands
 ```
+#list docker images
+
 docker images
 ```
 run image
