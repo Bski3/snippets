@@ -1,27 +1,27 @@
-##Description
+Description
 
 This is a collection of commands for configuring and hardening a Docker instance.
 
-##list docker images
+list docker images
 ```
 docker images
 ```
-##run image
+run image
 ```
 docker -run -it --rm <repository> /bin/bash
 ```
-##show running images
+show running images
 ```
 docker ps -a
 ```
-##build
+build
 ```
 docker build . -t <imageid>
 ```
 
 ===========================================================================
 
-##Running as unprivileged user
+Running as unprivileged user
 ```
 ##add to Dockerfile
 
@@ -37,7 +37,7 @@ docker run -u <user> -it --rm <repository> /bin/bash
 ```
 ===========================================================================
 
-##Restrict running in privileged mode
+Restrict running in privileged mode
 ```
 ##run (as <user>)
 
@@ -45,7 +45,7 @@ docker run -u <user> -it --rm --security-opt=no-new-privileges <imageid> /bin/ba
 ```
 ===========================================================================
 
-##Block access to root account
+Block access to root account
 ```
 ##add to Dockerfile
 
@@ -55,7 +55,7 @@ RUN chsh -s /usr/sbin/nologin root
 ```
 ===========================================================================
 
-##Specify kernel level capabilities
+Specify kernel level capabilities
 [https://man7.org/linux/man-pages/man7/capabilities.7.html](https://man7.org/linux/man-pages/man7/capabilities.7.html)
 ```
 ##run with specified capabilities (drop all, add network-related operations with NET_ADMIN)
@@ -64,7 +64,7 @@ docker run --cap-drop all --cap-add NET_ADMIN -it --rm <user> <imageid> /bin/bas
 ```
 ===========================================================================
 
-##Prevent container from writing to filesystem
+Prevent container from writing to filesystem
 ```
 ##run as read-only(as <user>)
 docker run --read-only -u <user> -it --rm
@@ -74,7 +74,7 @@ docker run --read-only --tempfs /opt -u <user> -it --rm
 ```
 ===========================================================================
 
-##Intercontainer isolation
+Intercontainer isolation
 ```
 ##check docker network
 docker network ls
@@ -90,7 +90,7 @@ docker run -it --rm --network <networkname> /bin/bash
 ```
 ===========================================================================
 
-##Docker auditing with docker-bench-security
+Docker auditing with docker-bench-security
 
 clone repo
 ```
