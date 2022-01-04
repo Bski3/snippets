@@ -8,17 +8,17 @@ General commands
 #list docker images
 
 docker images
-```
-run image
-```
+
+#run image
+
 docker -run -it --rm <repository> /bin/bash
-```
-show running images
-```
+
+#show running images
+
 docker ps -a
-```
-build
-```
+
+#build
+
 docker build . -t <imageid>
 ```
 
@@ -26,15 +26,15 @@ docker build . -t <imageid>
 
 Running as unprivileged user
 ```
-##add to Dockerfile
+#add to Dockerfile
 
 RUN groupadd -r <user> && useradd -r -g <usergroup> <user>
 
 ENV HOME /home/<user>
 
-##build
+#build
 
-##run as unpriv <user>
+#run as unpriv <user>
 
 docker run -u <user> -it --rm <repository> /bin/bash
 ```
@@ -42,7 +42,7 @@ docker run -u <user> -it --rm <repository> /bin/bash
 
 Restrict running in privileged mode
 ```
-##run (as <user>)
+#run (as <user>)
 
 docker run -u <user> -it --rm --security-opt=no-new-privileges <imageid> /bin/bash
 ```
@@ -50,18 +50,18 @@ docker run -u <user> -it --rm --security-opt=no-new-privileges <imageid> /bin/ba
 
 Block access to root account
 ```
-##add to Dockerfile
+#add to Dockerfile
 
 RUN chsh -s /usr/sbin/nologin root
 
-##build
+#build
 ```
 ===========================================================================
 
 Specify kernel level capabilities
 [https://man7.org/linux/man-pages/man7/capabilities.7.html](https://man7.org/linux/man-pages/man7/capabilities.7.html)
 ```
-##run with specified capabilities (drop all, add network-related operations with NET_ADMIN)
+#run with specified capabilities (drop all, add network-related operations with NET_ADMIN)
 
 docker run --cap-drop all --cap-add NET_ADMIN -it --rm <user> <imageid> /bin/bash
 ```
@@ -69,26 +69,26 @@ docker run --cap-drop all --cap-add NET_ADMIN -it --rm <user> <imageid> /bin/bas
 
 Prevent container from writing to filesystem
 ```
-##run as read-only(as <user>)
+#run as read-only(as <user>)
 docker run --read-only -u <user> -it --rm
 
-##run with temporary writeable filesystem(as <user>)
+#run with temporary writeable filesystem(as <user>)
 docker run --read-only --tempfs /opt -u <user> -it --rm
 ```
 ===========================================================================
 
 Intercontainer isolation
 ```
-##check docker network
+#check docker network
 docker network ls
 
-##inspect network (<networkname)
+#inspect network (<networkname)
 docker network inspect <networkname>
 
-##create custom network and disable InterContainerCommunications
+#create custom network and disable InterContainerCommunications
 docker network create --driver bridge -o "com.docker.network.bridge.enable_icc="false"" <networkname>
 
-##run with custom network <networkname>
+#run with custom network <networkname>
 docker run -it --rm --network <networkname> /bin/bash
 ```
 ===========================================================================
