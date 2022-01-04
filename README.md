@@ -1,6 +1,4 @@
-# Docker
-
-## Description
+# Description
 
 This is a repository containing snippets of All The Kinds
 
