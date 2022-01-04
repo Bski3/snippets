@@ -6,19 +6,15 @@ This is a collection of commands for configuring and hardening a Docker instance
 General commands
 ```
 #list docker images
-
 docker images
 
 #run image
-
 docker -run -it --rm <repository> /bin/bash
 
 #show running images
-
 docker ps -a
 
 #build
-
 docker build . -t <imageid>
 ```
 
@@ -27,7 +23,6 @@ docker build . -t <imageid>
 Running as unprivileged user
 ```
 #add to Dockerfile
-
 RUN groupadd -r <user> && useradd -r -g <usergroup> <user>
 
 ENV HOME /home/<user>
@@ -35,7 +30,6 @@ ENV HOME /home/<user>
 #build
 
 #run as unpriv <user>
-
 docker run -u <user> -it --rm <repository> /bin/bash
 ```
 ===========================================================================
@@ -43,7 +37,6 @@ docker run -u <user> -it --rm <repository> /bin/bash
 Restrict running in privileged mode
 ```
 #run (as <user>)
-
 docker run -u <user> -it --rm --security-opt=no-new-privileges <imageid> /bin/bash
 ```
 ===========================================================================
@@ -51,7 +44,6 @@ docker run -u <user> -it --rm --security-opt=no-new-privileges <imageid> /bin/ba
 Block access to root account
 ```
 #add to Dockerfile
-
 RUN chsh -s /usr/sbin/nologin root
 
 #build
@@ -62,7 +54,6 @@ Specify kernel level capabilities
 [https://man7.org/linux/man-pages/man7/capabilities.7.html](https://man7.org/linux/man-pages/man7/capabilities.7.html)
 ```
 #run with specified capabilities (drop all, add network-related operations with NET_ADMIN)
-
 docker run --cap-drop all --cap-add NET_ADMIN -it --rm <user> <imageid> /bin/bash
 ```
 ===========================================================================
