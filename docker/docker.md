@@ -72,7 +72,7 @@ Intercontainer isolation
 #check docker network
 docker network ls
 
-#inspect network (<networkname)
+#inspect network (<networkname>)
 docker network inspect <networkname>
 
 #create custom network and disable InterContainerCommunications
