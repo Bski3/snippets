@@ -96,10 +96,10 @@ cd docker-bench-security && ./docker-bench-security.sh
 
 ## Sources
 
-[HackerSploit](https://github.com/AlexisAhmed)
+[Alexis Ahmed (HackerSploit)](https://github.com/AlexisAhmed)
 
-[https://hackersploit.org/docker-security-course/](https://hackersploit.org/docker-security-course/)
+[HackerSploit docker security course](https://hackersploit.org/docker-security-course/)
 
-[Docker benchmark security](https://github.com/docker/docker-bench-security.git)
+[Docker benchmark security GitHub](https://github.com/docker/docker-bench-security.git)
 
-[Linux manual](https://man7.org/linux/man-pages/man7/capabilities.7.html)
+[Linux capabilities manual](https://man7.org/linux/man-pages/man7/capabilities.7.html)
