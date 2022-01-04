@@ -1,6 +1,6 @@
 ## Description
 
-This is a collection of commands for configuring and hardening a Docker instance.
+These are the essentials for configuring and hardening a Docker instance.
 
 
 General commands
