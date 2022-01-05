@@ -1,6 +1,6 @@
 # Description
 
-This is a repository containing snippets of All The Kinds
+This is a repository meant for containing snippets of All The Kinds
 
 ## Content:
 
