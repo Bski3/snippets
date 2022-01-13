@@ -9,7 +9,7 @@ General commands
 docker images
 
 #run image
-docker -run -it --rm <repository> /bin/bash
+docker run -it --rm <repository> /bin/bash
 
 #show running images
 docker ps -a
